@@ -16,8 +16,7 @@ ap.add_argument(
     help="type of preprocessing to be done")
 args = vars(ap.parse_args())
 
-# load the example image and convert it to grayscale
-image = cv2.imread("")  # path to image here
+image = cv2.imread(args["image"])  # path to image here
 processedPicture = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 if args["preprocess"] == "thresh":
@@ -39,4 +38,3 @@ print(text)
 
 cv2.imshow("Image", image)
 cv2.imshow("Output", processedPicture)
-cv2.waitKey(0)
